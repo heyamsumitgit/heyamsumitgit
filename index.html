@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Graphic Designer Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #333;
+            background: #f8f7f2;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: white;
+            border-bottom: 0.5px solid #e0e0e0;
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            margin-left: 2rem;
+            transition: color 0.2s;
+        }
+        
+        nav a:hover {
+            color: #2563eb;
+        }
+        
+        .logo {
+            font-weight: 600;
+            font-size: 18px;
+        }
+        
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-size: 48px;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        h2 {
+            font-size: 32px;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+        
+        h3 {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        p {
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        .hero {
+            background: white;
+            text-align: center;
+            padding: 6rem 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        
+        .cta-button:hover {
+            background: #1d4ed8;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .portfolio-item {
+            background: white;
+            border: 0.5px solid #e0e0e0;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+        
+        .portfolio-img {
+            width: 100%;
+            height: 200px;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+        }
+        
+        .portfolio-info {
+            padding: 1.5rem;
+        }
+        
+        .portfolio-info h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        
+        .portfolio-info p {
+            font-size: 13px;
+            margin-bottom: 1rem;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .skill-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 0.5px solid #e0e0e0;
+        }
+        
+        .skill-card h3 {
+            margin-bottom: 0.75rem;
+        }
+        
+        .skill-list {
+            font-size: 13px;
+            color: #666;
+            list-style: none;
+        }
+        
+        .skill-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .skill-list li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-text p {
+            margin-bottom: 1rem;
+        }
+        
+        .about-img {
+            width: 100%;
+            height: 300px;
+            background: #f0f0f0;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-size: 14px;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 0.5px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 14px;
+            color: #333;
+            background: white;
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        
+        .footer {
+            background: #f0ebe3;
+            border-top: 0.5px solid #e0e0e0;
+            text-align: center;
+            padding: 2rem;
+            font-size: 13px;
+            color: #666;
+        }
+        
+        .social-links {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 0.5px solid #e0e0e0;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.2s;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .social-links a:hover {
+            background: white;
+            border-color: #2563eb;
+            color: #2563eb;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 36px; }
+            .hero h1 { font-size: 42px; }
+            h2 { font-size: 24px; }
+            .about-content { grid-template-columns: 1fr; }
+            nav a { margin-left: 1rem; font-size: 13px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <span class="logo">Your Name</span>
+            <div>
+                <a href="#portfolio">Work</a>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Creative Graphic Designer</h1>
+        <p>I craft beautiful, functional designs that bring your brand to life. From branding to digital design, let's create something amazing together.</p>
+        <button class="cta-button" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get in touch</button>
+    </section>
+
+    <section id="portfolio">
+        <h2>Featured Work</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <div class="portfolio-img">Replace with your image</div>
+                <div class="portfolio-info">
+                    <h3>Brand Identity</h3>
+                    <p>Complete branding package including logo, color palette, and brand guidelines.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-img">Replace with your image</div>
+                <div class="portfolio-info">
+                    <h3>Social Media Design</h3>
+                    <p>Eye-catching posts and campaigns designed to boost engagement.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-img">Replace with your image</div>
+                <div class="portfolio-info">
+                    <h3>Print Design</h3>
+                    <p>Business cards, flyers, and packaging designs that make an impact.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-img">Replace with your image</div>
+                <div class="portfolio-info">
+                    <h3>UI/UX Design</h3>
+                    <p>User-focused interface and experience design for digital products.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-img">Replace with your image</div>
+                <div class="portfolio-info">
+                    <h3>Web Design</h3>
+                    <p>Modern, responsive website designs tailored to your brand.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-img">Replace with your image</div>
+                <div class="portfolio-info">
+                    <h3>Illustration</h3>
+                    <p>Custom illustrations that add personality and depth to your projects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2>Services</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Brand Design</h3>
+                <ul class="skill-list">
+                    <li>Logo design</li>
+                    <li>Brand guidelines</li>
+                    <li>Color systems</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h3>Digital Design</h3>
+                <ul class="skill-list">
+                    <li>UI design</li>
+                    <li>Web design</li>
+                    <li>App design</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h3>Print Design</h3>
+                <ul class="skill-list">
+                    <li>Business cards</li>
+                    <li>Flyers & posters</li>
+                    <li>Packaging</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h3>Social Media</h3>
+                <ul class="skill-list">
+                    <li>Graphics & posts</li>
+                    <li>Stories & banners</li>
+                    <li>Campaign design</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Hi! I'm a passionate graphic designer with [X] years of experience creating visual solutions that communicate and inspire.</p>
+                <p>I believe great design solves problems, tells stories, and creates meaningful connections between brands and their audiences.</p>
+                <p>My approach combines strategic thinking with creative execution to deliver designs that not only look beautiful but also achieve your business goals.</p>
+            </div>
+            <div class="about-img">Your photo here</div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Let's Work Together</h2>
+        <div class="contact-form">
+            <form onsubmit="alert('Thanks for reaching out! I will get back to you soon.'); return false;">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#" title="LinkedIn">in</a>
+            <a href="#" title="Instagram">ig</a>
+            <a href="#" title="Behance">be</a>
+            <a href="#" title="Email">✉</a>
+        </div>
+    </footer>
+</body>
+</html>
