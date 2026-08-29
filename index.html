@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sumit Kumar - Graphic Designer Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
   <style>
 .hero {
@@ -282,22 +283,34 @@
             color: #666;
         }
         
-        .social-links {
+       .social-links {
     display: flex;
     justify-content: center;
-    gap: 25px;
+    align-items: center;
+    gap: 15px;
     margin-top: 20px;
 }
 
 .social-links a {
-    color: #333;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e0e0e0;
+    border-radius: 50%;
     text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
+    color: #333;
+    background: white;
+    font-size: 18px;
+    transition: all 0.3s ease;
 }
 
 .social-links a:hover {
-    color: #2563eb;
+    background: #2563eb;
+    color: white;
+    border-color: #2563eb;
+    transform: translateY(-3px);
 }
         
         @media (max-width: 768px) {
@@ -472,10 +485,24 @@
   <footer>
     <p>© 2026 Sumit Kumar. All rights reserved.</p>
 
-   <div class="social-links">
-    <a href="https://www.linkedin.com/in/sumit-kumar-988b192b5" target="_blank">LinkedIn</a>
+  <div class="social-links">
 
-    <a href="https://www.behance.net/bceb4ebd" target="_blank">Behance</a>
+    <a href="https://www.linkedin.com/in/sumit-kumar-988b192b5" 
+       target="_blank" 
+       aria-label="LinkedIn">
+        <i class="fa-brands fa-linkedin-in"></i>
+    </a>
 
-    <a href="https://www.instagram.com/heyamsumit" target="_blank">Instagram</a>
+    <a href="https://www.behance.net/bceb4ebd" 
+       target="_blank" 
+       aria-label="Behance">
+        <i class="fa-brands fa-behance"></i>
+    </a>
+
+    <a href="https://www.instagram.com/heyamsumit" 
+       target="_blank" 
+       aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+
 </div>
